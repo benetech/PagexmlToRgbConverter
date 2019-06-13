@@ -9,9 +9,9 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 from PIL import Image, ImageDraw
 
-images_dir = "/home/rkeiii/tmp/coolds/primabig/PRImA Layout Analysis Dataset/Images"
-xml_dir = "/home/rkeiii/tmp/coolds/primabig/PRImA Layout Analysis Dataset/XML"
-masked_images_dir = "/home/rkeiii/tmp/coolds/primabig/PRImA Layout Analysis Dataset/RGB Masked Images"
+images_dir = sys.argv[1]
+xml_dir = sys.argv[2]
+masked_images_dir = sys.argv[3]
 
 region_type_to_color = {
     "ChartRegion":      (255,0,0), # red
@@ -61,7 +61,7 @@ for imagef in os.listdir(images_dir):
                         if len(coordinate_array) > 1:
                             draw.polygon(coordinate_array, fill=region_type_to_color[region_type])
         
-        # write out the image
-        new_image.save("%s/%s.png" % (masked_images_dir, basename), "PNG")
+                # write out the image
+                new_image.save("%s/%s.png" % (masked_images_dir, basename), "PNG")
 
         image_count += 1
