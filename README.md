@@ -4,6 +4,19 @@ This script was written to facilitate converting the [PRImA Layout Analysis Data
 # Map of colors to region types
 The basic map is defined at lines 16-27 and can be modified to suit. For example if you want to combine multiple region types into a single color you simple modify the map accordingly and the script should do the right thing (hopefully).
 
+## The current color -> region type map as a table
+|| Region Type || Region Color Code ||
+|ChartRegion|255,0,0|
+|DrawingRegion|0,255,0|
+|FrameRegion|0,0,255|
+|GraphicRegion|255,255,0|
+|ImageRegion|0,255,255|
+|MathsRegion|255,138,0|
+|NoiseRegion|255,0,255|
+|SeparatorRegion|150,0,255|
+|TableRegion|0,100,25|
+|TextRegion|128,128,128|
+
 Peace out and good luck,
 
 Ron
