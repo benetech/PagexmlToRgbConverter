@@ -1,6 +1,12 @@
 # Overview
 This script was written to facilitate converting the [PRImA Layout Analysis Dataset](https://www.primaresearch.org/datasets/Layout_Analysis) into an RGB masked format compatible with training various image segmentation models. The dataset is comprised of 478 individual pages images in TIF format and associated masking metadata in PAGE XML format alongside the images. I would think this script could be more generally applied to convert most datasets comprised of images + PAGE XML metadata into the RGB masked format that is commonly used for training image segmentation models.
 
+# System Requirements
+This script has only ever been tested on Ubuntu 18.04 but I would expect it would probably work on other *nix platforms (and who knows, maybe even Windows?)
+* Python 3.6
+* BeautifulSoup 4
+* Pillow
+
 # Mapping of colors to region types
 The basic map is defined at lines 16-27 of converter.py and can be modified to suit. Colors are described in RGB notation. For example if you want to combine multiple region types into a single color you simple modify the map accordingly and the script should do the right thing (hopefully).
 
