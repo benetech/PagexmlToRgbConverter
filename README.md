@@ -1,10 +1,10 @@
 # Overview
 This script was written to facilitate converting the [PRImA Layout Analysis Dataset](https://www.primaresearch.org/datasets/Layout_Analysis) into an RGB masked format compatible with training the [dhSegment](https://github.com/dhlab-epfl/dhSegment) model. The dataset is comprised of 478 individual pages masked off in the PAGE XML format alongside the images. I would think this script could be more generally applied to convert most datasets comprised of images + PAGE XML metadata into RGB masked images suitable for training.
 
-# Map of colors to region types
-The basic map is defined at lines 16-27 of converter.py and can be modified to suit. For example if you want to combine multiple region types into a single color you simple modify the map accordingly and the script should do the right thing (hopefully).
+# Mapping of colors to region types
+The basic map is defined at lines 16-27 of converter.py and can be modified to suit. Colors are described in RGB notation. For example if you want to combine multiple region types into a single color you simple modify the map accordingly and the script should do the right thing (hopefully).
 
-## The current color -> region type map as a table
+## The default color to region type mapping
 | Region Type | Region Color Code |
 |-------------|-------------------|
 |ChartRegion|255,0,0|
@@ -18,6 +18,16 @@ The basic map is defined at lines 16-27 of converter.py and can be modified to s
 |TableRegion|0,100,25|
 |TextRegion|128,128,128|
 
-Peace out and good luck,
+# Region outlines
+If you would like to have an outline drawn around the RGB masked regions you'll want to set the region_outline variable to a three digit RGB tuple for the color you want to use for the outline in converter.py.
 
-Ron
+# How to run the converter.py script
+The converter.py script expects to be provided three directories as input arguments. Additionally it also operates under the assumption that ground truth images and their associated PAGE XML metadata files will share the same base name. For example if you have a ground truth image called coolpic.jpg converter.py will expect the associated PAGE XML metadata to be called coolpic.xml.
+
+## converter.py args
+1. Directory containing ground truth images
+2. Directory containing ground truth metadata in PAGE XML format
+3. Directory where output images with RGB masks applied should be stored
+
+## converter.py usage example
+./converter.py /path/to/ground_truth_images /path/to/ground_truth_pagexml /path/to/output_rgb_masked_images
