@@ -4,7 +4,7 @@ This script was written to facilitate converting the [PRImA Layout Analysis Data
 # System Requirements
 This script has only ever been tested on Ubuntu 18.04 but I would expect it would probably work on other *nix platforms (and who knows, maybe even Windows?)
 * Python 3.6
-* BeautifulSoup 4
+* BeautifulSoup 4 (with libxml2 support)
 * Pillow
 
 # Mapping of colors to region types
