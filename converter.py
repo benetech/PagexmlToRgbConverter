@@ -14,7 +14,7 @@ xml_dir = sys.argv[2]
 masked_images_dir = sys.argv[3]
 
 # change this to an RGB tuple ie (0,0,0) to add an outline to the drawn polygons
-region_outline = False
+region_outline = None
 
 # change this if you'd like to map specific region types to different colors
 region_type_to_color = {
@@ -63,7 +63,9 @@ for imagef in os.listdir(images_dir):
 
                         # if we have coordinates draw our polygon
                         if len(coordinate_array) > 1:
-                            draw.polygon(coordinate_array, fill=region_type_to_color[region_type], outline=region_outline)
+                            draw.polygon(coordinate_array,
+                                         fill=region_type_to_color[region_type],
+                                         outline=region_outline)
         
                 # write out the image
                 new_image.save("%s/%s.png" % (masked_images_dir, basename), "PNG")
