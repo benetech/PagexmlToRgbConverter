@@ -1,5 +1,5 @@
 # Overview
-This script was written to facilitate converting the [PRImA Layout Analysis Dataset](https://www.primaresearch.org/datasets/Layout_Analysis) into an RGB masked format compatible with training various image segmentation models. The dataset is comprised of 478 individual pages images in TIF format and associated masking metadata in PAGE XML format alongside the images.
+This script was written to facilitate converting the [PRImA Layout Analysis Dataset](https://www.primaresearch.org/datasets/Layout_Analysis) into an RGB masked PNG format compatible with training various image segmentation models. The dataset is comprised of 478 individual pages images in TIF format and associated masking metadata in PAGE XML format alongside the images.
 
 # System Requirements
 This script has only ever been tested on Ubuntu 18.04 but I would expect it would probably work on other *nix platforms (and who knows, maybe even Windows?)
